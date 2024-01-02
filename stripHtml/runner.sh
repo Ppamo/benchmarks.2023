@@ -17,7 +17,7 @@ fi
 docker images | grep "$IMAGE" > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	printf "> Building image $IMAGE\n"
-	docker build --progress plain -t $IMAGE .
+	docker build -t $IMAGE .
 	if [ $? -ne 0 ]; then
 		printf "< Error building new image\n"
 		exit 1

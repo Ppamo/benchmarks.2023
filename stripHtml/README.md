@@ -19,7 +19,7 @@ En cuanto al rendimiento, todo depende de la situación específica. Las funcion
 
 ## Prueba
 
-Para facilitar la ejecución de la prueba, se empaqueta el código Go en un Dockerfile, con un script llamado **runner.sh** que se ha creado para facilitar la construcción y el inicio del contenedor que ejecutará la prueba.   Éste script simplemente construye la imágen Docker si ésta no existe, y a continuación inicia un contenedor, el cual ejecutará directamente las pruebas.   El contenedor ejecutará el comando por defecto definido en el Dockerfile, el cual es:
+Para facilitar la ejecución de la prueba, se empaqueta el código Go en un Dockerfile, con un script llamado **runner.sh** que se ha creado para facilitar la construcción y el inicio del contenedor que ejecutará la prueba.   Éste script simplemente construye la imágen Docker si ésta no existe, y a continuación inicia un contenedor, el cual ejecutará directamente las pruebas.   La prueba simplemente toma un texto html de entrada y genera un texto sin los tags html, la función se ejecuta 1000 veces, para facilitar el análisis de los resultados.   El contenedor ejecutará el comando por defecto definido en el Dockerfile, el cual es:
 
 ```sh
 $$ go test -bench=. -benchtime=100x ./...
